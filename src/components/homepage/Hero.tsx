@@ -1,5 +1,6 @@
 import { ArrowRight, Phone, Camera, Star, Check, User } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import heroWorkerImg from '../../assets/services/hero-worker.png'
 
 export default function Hero() {
     return (
@@ -11,79 +12,92 @@ export default function Hero() {
             </div>
 
             <div className="container-custom relative z-10">
-                <div className="max-w-4xl mx-auto text-center">
-                    {/* Trust Badge */}
-                    <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 mb-8 animate-fade-in-up">
-                        <div className="flex -space-x-2">
-                            {[1, 2, 3].map((i) => (
-                                <div key={i} className="w-6 h-6 rounded-full bg-gray-200 border-2 border-white" />
-                            ))}
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="text-center lg:text-left">
+                        {/* Trust Badge */}
+                        <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 mb-8 animate-fade-in-up">
+                            <div className="flex -space-x-2">
+                                {[1, 2, 3].map((i) => (
+                                    <div key={i} className="w-6 h-6 rounded-full bg-gray-200 border-2 border-white" />
+                                ))}
+                            </div>
+                            <span className="text-sm font-medium text-gray-600">Trusted by 10,000+ homeowners</span>
+                            <div className="flex items-center text-yellow-400">
+                                <Star size={12} fill="currentColor" />
+                                <Star size={12} fill="currentColor" />
+                                <Star size={12} fill="currentColor" />
+                                <Star size={12} fill="currentColor" />
+                                <Star size={12} fill="currentColor" />
+                            </div>
                         </div>
-                        <span className="text-sm font-medium text-gray-600">Trusted by 10,000+ homeowners</span>
-                        <div className="flex items-center text-yellow-400">
-                            <Star size={12} fill="currentColor" />
-                            <Star size={12} fill="currentColor" />
-                            <Star size={12} fill="currentColor" />
-                            <Star size={12} fill="currentColor" />
-                            <Star size={12} fill="currentColor" />
+
+                        {/* Headline */}
+                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 text-balance animate-fade-in-up delay-100">
+                            Professional Home Services, <br />
+                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+                                Powered by AI
+                            </span>
+                        </h1>
+
+                        {/* Subheadline */}
+                        <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0 text-balance animate-fade-in-up delay-200">
+                            Get instant quotes, vetted contractors, and guaranteed quality.
+                            The modern way to manage your home repairs.
+                        </p>
+
+                        {/* CTAs */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in-up delay-300">
+                            <Link to="/quote" className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 group">
+                                <span>Request a Quote</span>
+                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            </Link>
+
+                            <button className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2">
+                                <Phone size={18} />
+                                <span>Request a Call</span>
+                            </button>
+
+                            <button className="btn-ghost w-full sm:w-auto flex items-center justify-center gap-2">
+                                <Camera size={18} />
+                                <span>Send Photos</span>
+                            </button>
                         </div>
                     </div>
 
-                    {/* Headline */}
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 text-balance animate-fade-in-up delay-100">
-                        Professional Home Services, <br />
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
-                            Powered by AI
-                        </span>
-                    </h1>
+                    {/* Hero Image */}
+                    <div className="relative block animate-fade-in-up delay-200">
+                        <div className="relative z-10 overflow-hidden rounded-2xl">
+                            <img 
+                                src={heroWorkerImg} 
+                                alt="Professional HVAC and Electrical Services" 
+                                className="w-full h-auto rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105"
+                            />
+                        </div>
 
-                    {/* Subheadline */}
-                    <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto text-balance animate-fade-in-up delay-200">
-                        Get instant quotes, vetted contractors, and guaranteed quality.
-                        The modern way to manage your home repairs.
-                    </p>
+                        {/* Floating Cards */}
+                        <div className="absolute top-1/4 -left-12 animate-float delay-200 z-20">
+                            <div className="glass-card p-4 rounded-2xl flex items-center gap-3 w-64">
+                                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                    <Check size={20} />
+                                </div>
+                                <div>
+                                    <p className="text-sm font-semibold">Quote Approved</p>
+                                    <p className="text-xs text-gray-500">Plumbing repair • $150</p>
+                                </div>
+                            </div>
+                        </div>
 
-                    {/* CTAs */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
-                        <Link to="/quote" className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 group">
-                            <span>Request a Quote</span>
-                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                        </Link>
-
-                        <button className="btn-secondary w-full sm:w-auto flex items-center justify-center gap-2">
-                            <Phone size={18} />
-                            <span>Request a Call</span>
-                        </button>
-
-                        <button className="btn-ghost w-full sm:w-auto flex items-center justify-center gap-2">
-                            <Camera size={18} />
-                            <span>Send Photos</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Floating UI Elements (Decorative) */}
-            <div className="hidden lg:block absolute top-1/3 left-10 animate-float delay-200">
-                <div className="glass-card p-4 rounded-2xl flex items-center gap-3 w-64">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                        <Check size={20} />
-                    </div>
-                    <div>
-                        <p className="text-sm font-semibold">Quote Approved</p>
-                        <p className="text-xs text-gray-500">Plumbing repair • $150</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="hidden lg:block absolute bottom-1/4 right-10 animate-float delay-300">
-                <div className="glass-card p-4 rounded-2xl flex items-center gap-3 w-64">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                        <User size={20} />
-                    </div>
-                    <div>
-                        <p className="text-sm font-semibold">Technician Arriving</p>
-                        <p className="text-xs text-gray-500">John is 5 mins away</p>
+                        <div className="absolute bottom-1/4 -right-4 animate-float delay-300 z-20">
+                            <div className="glass-card p-4 rounded-2xl flex items-center gap-3 w-64">
+                                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                                    <User size={20} />
+                                </div>
+                                <div>
+                                    <p className="text-sm font-semibold">Technician Arriving</p>
+                                    <p className="text-xs text-gray-500">John is 5 mins away</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
