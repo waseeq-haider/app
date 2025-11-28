@@ -122,7 +122,7 @@
 
   /* Enhanced Float Animation */
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 12s ease-in-out infinite;
   }
 
   @keyframes float {
@@ -133,16 +133,16 @@
     }
 
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-50px);
     }
   }
 
   /* Scroll-triggered Animations */
   .scroll-animate {
     opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(80px) scale(0.8);
+    transition: opacity 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .scroll-animate.active {
@@ -153,8 +153,8 @@
   /* Gather Effect - Elements come from different directions */
   .gather-from-left {
     opacity: 0;
-    transform: translateX(-60px) rotate(-5deg);
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-120px) rotate(-12deg);
+    transition: all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .gather-from-left.active {
@@ -164,8 +164,8 @@
 
   .gather-from-right {
     opacity: 0;
-    transform: translateX(60px) rotate(5deg);
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(120px) rotate(12deg);
+    transition: all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .gather-from-right.active {
@@ -175,8 +175,8 @@
 
   .gather-from-bottom {
     opacity: 0;
-    transform: translateY(60px) scale(0.9);
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(100px) scale(0.7);
+    transition: all 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .gather-from-bottom.active {
@@ -186,9 +186,9 @@
 
   /* Fade In Up - Legacy support */
   .animate-fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: fadeInUp 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(60px);
   }
 
   @keyframes fadeInUp {
