@@ -7,6 +7,7 @@ import Reviews from '../components/homepage/Reviews'
 import WhyApex from '../components/homepage/WhyApex'
 import PricingPreview from '../components/homepage/PricingPreview'
 import FloatingChatBubble from '../components/homepage/FloatingChatBubble'
+import Gallery from '../components/homepage/Gallery'
 
 export default function HomePage() {
     return (
@@ -15,6 +16,7 @@ export default function HomePage() {
             <Hero />
             <ServicesGrid />
             <ServiceAreas />
+            <Gallery />
             <Reviews />
             <WhyApex />
             <PricingPreview />

@@ -4,30 +4,48 @@
 
 @layer base {
   :root {
-    /* Premium Color Palette - Apple/Stripe Inspired */
-    --color-primary: 0 102 255;
-    /* Vibrant Blue */
-    --color-primary-dark: 0 82 204;
-    --color-primary-light: 51 133 255;
+    /* Vibrant Purple/Pink/Orange Palette */
+    --color-primary: 139 92 246;
+    /* Purple #8B5CF6 */
+    --color-primary-dark: 109 40 217;
+    /* Deep Purple #6D28D9 */
+    --color-primary-light: 167 139 250;
+    /* Light Purple #A78BFA */
 
-    --color-secondary: 17 24 39;
-    /* Dark Navy/Black */
+    --color-secondary: 236 72 153;
+    /* Pink #EC4899 */
+    --color-secondary-dark: 219 39 119;
+    /* Deep Pink #DB2777 */
 
-    --color-accent: 52 199 89;
-    /* Success Green */
+    --color-accent: 249 115 22;
+    /* Orange #F97316 */
+    --color-accent-light: 251 146 60;
+    /* Light Orange #FB923C */
 
-    --color-surface-50: 249 250 251;
-    --color-surface-100: 243 244 246;
-    --color-surface-200: 229 231 235;
+    --color-success: 16 185 129;
+    /* Emerald #10B981 */
 
-    --color-text-primary: 17 24 39;
-    --color-text-secondary: 75 85 99;
-    --color-text-tertiary: 156 163 175;
+    --color-surface-50: 253 242 248;
+    /* Very light pink tint */
+    --color-surface-100: 250 232 255;
+    /* Light purple tint */
+    --color-surface-200: 243 232 255;
+    /* Purple tint */
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-    --gradient-surface: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
-    --gradient-glow: radial-gradient(circle at center, rgba(0, 102, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    --color-text-primary: 88 28 135;
+    /* Deep Purple #581C87 */
+    --color-text-secondary: 124 58 237;
+    /* Medium Purple #7C3AED */
+    --color-text-tertiary: 167 139 250;
+    /* Soft Purple #A78BFA */
+
+    /* Vibrant Gradients */
+    --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+    --gradient-secondary: linear-gradient(135deg, #F97316 0%, #EC4899 100%);
+    --gradient-accent: linear-gradient(135deg, #EC4899 0%, #F97316 100%);
+    --gradient-surface: linear-gradient(180deg, #FDF2F8 0%, #FAE8FF 100%);
+    --gradient-glow-purple: radial-gradient(circle at center, rgba(139, 92, 246, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    --gradient-glow-pink: radial-gradient(circle at center, rgba(236, 72, 153, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
   }
 
   html {
@@ -37,7 +55,7 @@
   }
 
   body {
-    @apply bg-white text-gray-900 font-sans;
+    @apply bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 text-purple-900 font-sans;
   }
 
   h1,
@@ -46,50 +64,54 @@
   h4,
   h5,
   h6 {
-    @apply font-display tracking-tight text-gray-900;
+    @apply font-display tracking-tight text-purple-900;
   }
 }
 
 @layer components {
 
-  /* Glassmorphism */
+  /* Enhanced Glassmorphism */
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-sm;
+    @apply bg-white/70 backdrop-blur-xl border border-purple-200/40 shadow-sm;
   }
 
   .glass-card {
-    @apply bg-white/60 backdrop-blur-lg border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply bg-gradient-to-br from-white/60 to-purple-50/60 backdrop-blur-lg border border-purple-200/50 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300;
   }
 
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-xl border border-white/10 shadow-lg text-white;
+    @apply bg-gradient-to-br from-purple-900/90 to-pink-900/90 backdrop-blur-xl border border-purple-300/20 shadow-lg text-white;
   }
 
-  /* Premium Buttons */
+  /* Vibrant Buttons */
   .btn-primary {
-    @apply px-6 py-3 bg-[length:200%_100%] bg-gradient-to-r from-[#0066FF] to-[#0052CC] hover:bg-[100%_0] text-white font-medium rounded-full transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-0.5 active:translate-y-0;
+    @apply px-6 py-3 bg-[length:200%_100%] bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 hover:bg-[100%_0] text-white font-medium rounded-full transition-all duration-300 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-pink-500/40 hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-white text-gray-900 font-medium rounded-full border border-gray-200 transition-all duration-300 hover:border-gray-300 hover:bg-gray-50 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply px-6 py-3 bg-white text-purple-700 font-medium rounded-full border-2 border-purple-300 transition-all duration-300 hover:border-pink-400 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .btn-ghost {
-    @apply px-6 py-3 bg-transparent text-gray-600 font-medium rounded-full transition-all duration-300 hover:bg-gray-100 hover:text-gray-900;
+    @apply px-6 py-3 bg-transparent text-purple-600 font-medium rounded-full transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 hover:text-pink-600;
   }
 
   /* Premium Inputs */
   .input-premium {
-    @apply w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all duration-200;
+    @apply w-full px-5 py-4 bg-gradient-to-br from-purple-50/50 to-pink-50/50 border border-purple-200 rounded-2xl text-purple-900 placeholder-purple-400 focus:outline-none focus:bg-white focus:border-pink-500 focus:ring-4 focus:ring-purple-500/10 transition-all duration-200;
   }
 
-  /* Layout */
+  /* Compact Layout */
   .container-custom {
-    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+    @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-10;
   }
 
   .section-padding {
-    @apply py-20 lg:py-32;
+    @apply py-16 lg:py-24;
+  }
+
+  .section-padding-sm {
+    @apply py-12 lg:py-16;
   }
 }
 
@@ -98,24 +120,71 @@
     text-wrap: balance;
   }
 
+  /* Enhanced Float Animation */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
   @keyframes float {
-    0% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
 
     50% {
       transform: translateY(-20px);
     }
-
-    100% {
-      transform: translateY(0px);
-    }
   }
 
+  /* Scroll-triggered Animations */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Gather Effect - Elements come from different directions */
+  .gather-from-left {
+    opacity: 0;
+    transform: translateX(-60px) rotate(-5deg);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gather-from-left.active {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+
+  .gather-from-right {
+    opacity: 0;
+    transform: translateX(60px) rotate(5deg);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gather-from-right.active {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+
+  .gather-from-bottom {
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .gather-from-bottom.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Fade In Up - Legacy support */
   .animate-fade-in-up {
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
@@ -129,15 +198,47 @@
     }
   }
 
+  /* Stagger Delays */
   .delay-100 {
+    transition-delay: 100ms;
     animation-delay: 100ms;
   }
 
   .delay-200 {
+    transition-delay: 200ms;
     animation-delay: 200ms;
   }
 
   .delay-300 {
+    transition-delay: 300ms;
     animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    transition-delay: 400ms;
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    transition-delay: 500ms;
+    animation-delay: 500ms;
+  }
+
+  /* Gradient Text */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-pink-500;
+  }
+
+  /* Reduced Spacing Utilities */
+  .gap-reduced {
+    @apply gap-6 lg:gap-8;
+  }
+
+  .compact-section {
+    @apply py-12 lg:py-20;
   }
 }
