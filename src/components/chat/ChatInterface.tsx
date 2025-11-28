@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Send, FileText, Calendar, Phone, User as UserIcon, X, ChevronLeft } from 'lucide-react'
+import { Send, FileText, Calendar, Phone, User as UserIcon, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 interface Message {
@@ -88,14 +88,6 @@ export default function ChatInterface() {
             {/* Header */}
             <div className="bg-white border-b border-gray-200 px-4 py-4">
                 <div className="max-w-3xl mx-auto">
-                    <Link
-                        to="/"
-                        className="inline-flex items-center gap-2 text-gray-600 hover:text-purple-600 transition-colors mb-4 text-sm"
-                    >
-                        <ChevronLeft size={16} />
-                        <span>Back to Home</span>
-                    </Link>
-
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white shadow-lg">
